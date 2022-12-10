@@ -1,5 +1,5 @@
 FROM python:3.7-alpine
-LABEL author=KHAJA
+LABEL author=SUMAN
 LABEL blog=directdevops.blog
 ARG HOME_DIR='/studentcourses'
 ADD . $HOME_DIR
