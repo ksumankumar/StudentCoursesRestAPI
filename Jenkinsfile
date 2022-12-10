@@ -22,12 +22,12 @@ pipeline {
         }
         stage("image pull") {
             steps {
-                sh 'docker image pull 8520005318/studentinfoapi'
+                sh 'docker image pull 8520005318/studentinfoapi:1.0'
             }
         }
         stage("container run") {
             steps {
-                sh 'docker container run -d --name studapi -P 8520005318/studentinfoapi'
+                sh 'docker container run -d --name studapi -P 8520005318/studentinfoapi:1.0'
             }
         }
     }

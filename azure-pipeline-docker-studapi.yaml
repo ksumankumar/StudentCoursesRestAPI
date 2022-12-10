@@ -1,0 +1,20 @@
+---
+trigger: 
+- master
+stages:
+  - stage: azdocker
+    pool: Docker
+    jobs:
+      - job: azdocker
+        steps:
+          - script: docker info
+      - job: image list
+        steps:
+          - script: docker image ls
+      - job: image pull 
+        steps:
+          - script: docker image pull 8520005318/studentinfoapi:1.0
+      - job: container run 
+        steps:
+          - script: docker container run -d --name studapi -P 8520005318/studentinfoapi:1.0        
+
